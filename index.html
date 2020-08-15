@@ -1,10 +1,9 @@
 <html>
 
 <head>
-
   <title>Guimaraes Eletronica</title>
   <link rel="stylesheet" type="text/css" href="./css/main.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -84,12 +83,121 @@
         </li>
       </ul>
 
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Procurar" />
-        <button class="btn my-2 my-sm-0" type="submit">
-          <img src="./img/iconeProcurar.png" width="25" height="25">
-        </button>
-      </form>
+
+
+      <div class="procurar">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Procurar" />
+          <button type="submit"><img src="./img/iconeProcurar.png" width="25px" height="25px"></button>
+        </form>
+      </div>
+
+      <div class="cart-button">
+        <form class="form-inline my-2 my-lg-0">
+          <button class="btn btn-light" type="button" data-toggle="modal" data-target="#cart"><img src="./img/cart.png"
+              width="35" height="35"></button>
+        </form>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cartModalLabel">Carrinho</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="row">
+                  <div class="col-75">
+                    <div class="container">
+                      <form action="/action_page.php">
+
+                        <div class="row">
+                          <div class="col-50">
+                            <h3>Endereço</h3>
+                            <label for="fname"><i class="fa fa-user"></i>
+                              Nome Completo</label>
+                            <input type="text" id="fname" name="firstname" placeholder="">
+                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="text" id="email" name="email" placeholder="ex: jhonny@dominio.com">
+                            <label for="adr"><i class="fa fa-address-card-o"></i> Endereço</label>
+                            <input type="text" id="adr" name="address" placeholder="seu Endereço">
+                            <label for="city"><i class="fa fa-institution"></i> Cidade</label>
+                            <input type="text" id="city" name="city" placeholder="São Paulo">
+
+                            <div class="row">
+                              <div class="col-50">
+                                <label for="state">Estado</label>
+                                <input type="text" id="state" name="state" placeholder="ex: São Paulo">
+                              </div>
+                              <div class="col-50">
+                                <label for="zip">Cep</label>
+                                <input type="text" id="zip" name="zip" placeholder="10001">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-50">
+                            <h3>Pagamento</h3>
+                            <label for="fname">Formas de Pagamento Aceitas</label>
+                            <div class="icon-container">
+                              <i class="fa fa-cc-paypal" style="color:navy;"></i>
+                              <i class="boleto"> <img src="./img/boleto.png" alt=""></i>
+                            </div>
+                            <!-- <label for="cname">Name on Card</label> 
+                            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                            <label for="ccnum">Credit card number</label>
+                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                            <label for="expmonth">Exp Month</label>
+                            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+                            <div class="row">
+                              <div class="col-50">
+                                <label for="expyear">Exp Year</label>
+                                <input type="text" id="expyear" name="expyear" placeholder="2018">
+                              </div>
+                              <div class="col-50">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="352">
+                              </div>
+                            </div>-->
+                          </div>
+
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                  <div class="col-25">
+                    <div class="container">
+                      <h4>Cart
+                        <span class="price" style="color:black">
+                          <i class="fa fa-shopping-cart"></i>
+                          <b>4</b>
+                        </span>
+                      </h4>
+                      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+                      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+                      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+                      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+                      <hr>
+                      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+                    </div>
+                  </div>
+                </div>
+                <input type="submit" value="Continuar Compra" class="btn">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
   </nav>
   </div>
@@ -103,6 +211,17 @@
     </div>
   </div>
 
+  <div class="card" style="width: 18rem;">
+    <img src="./img/Resistor-220R_1.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Kit 10 Resistor 220R 1/4w</h5>
+      <div class="text-subtitles">
+        <h6 class="card-subtitle mb-2 text-muted">Preço:<div class="subtitle-price"> 5,00 R$ </div>
+        </h6>
+      </div>
+      <a class="btn btn-primary" href="#addId01" role="button">Adicionar ao Carrinho</a>
+    </div>
+  </div>
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -145,24 +264,24 @@
         <ul class="list-unstyled">
           <li>
             <p>
-              <i class="fas fa-envelope mr-3"><img src="./img/mail-icon.png" height="25px" width="25px"></i>
+              <i class="email"><img src="./img/mail-icon.png" height="25px" width="25px"></i>
               contato@guimaraeseletronica.online</p>
           </li>
           <li>
             <p>
-              <i class="fas fa-phone mr-3"><img src="./img/phone-icon.png" height="25px" width="25px"></i>+55 21
+              <i class="telefone"><img src="./img/phone-icon.png" height="25px" width="25px"></i>+55 21
               98837-8243</p>
           </li>
 
           <li>
             <p>
-              <i class="fas fa-phone mr-3"><img src="./img/wa-icon.png" height="25px" width="25px"> </i>+55 21
+              <i class="zap-01"><img src="./img/wa-icon.png" height="25px" width="25px"> </i>+55 21
               98837-8243</p>
           </li>
 
           <li>
             <p>
-              <i class="fas fa-phone mr-3"><img src="./img/wa-icon.png" height="25px" width="25px"></i>+55 21 98926-7975
+              <i class="zap-02"><img src="./img/wa-icon.png" height="25px" width="25px"></i>+55 21 98926-7975
             </p>
           </li>
         </ul>
@@ -179,7 +298,7 @@
         <h5 class="font-weight-bold text-uppercase mb-4">Nos-Siga Nas Redes-Sociais</h5>
         <!-- Instagram -->
         <a class="ins-ic" href="https://www.instagram.com/guimaraes.eletronica/">
-          <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> <img src="./img/insta-icon.png"> </i>
+          <i class="instagram"> <img src="./img/insta-icon.png"> </i>
         </a>
 
       </div>
